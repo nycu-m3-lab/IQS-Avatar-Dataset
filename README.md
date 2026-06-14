@@ -32,10 +32,10 @@ The column fields in the behavioral dataset are defined below. Researchers can m
 Depending on your benchmarking paradigm (IQA or VQA), you can map the rows in the CSV file to the physical files using the following conventions:
 
 - **For Video-Based VQA Benchmarking:**
-  $$\text{File Path} = \texttt{stimuli/videos/}\{\texttt{Content\_ID}\}/\{\texttt{Distortion\_ID}\}.\texttt{mp4}$$
+  `stimuli/videos/{Content_ID}/{Distortion_ID}.mp4`
 
 - **For Image-Based IQA Benchmarking:**
-  $$\text{File Path} = \texttt{stimuli/images/}\{\texttt{Content\_ID}\}/\{\texttt{Distortion\_ID}\}.\texttt{png}$$
+  `stimuli/images/{Content_ID}/{Distortion_ID}.png`
   *(Note: Image-based evaluation excludes temporal conditions such as LFR_10 and LFR_15)*
 
 ## Intent Quality Score (IQS)
