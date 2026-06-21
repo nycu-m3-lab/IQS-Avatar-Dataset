@@ -8,24 +8,38 @@ This repository provides image fragments, video stimuli, and complete subjective
 ## Contents
 
 ```
-R3DAI_Dataset/
+IQS-Avatar-Dataset/
 ├── stimuli/
 │   ├── images/    10 actions × 13 conditions (PNG)
 │   └── videos/    10 actions × 15 conditions (MP4, ~3-5s)
 └── metadata/
+    ├── iqs_ground_truth.csv    135 fragment-level aggregated scores
     └── trial_responses.csv    2,688 trial-level responses
 ```
 
 ## 📊 Data Descriptions
 
-### 1. Metadata Fields (`data/trial_responses.csv`)
-The column fields in the behavioral dataset are defined below. Researchers can map these identifiers directly to the file paths in the `stimuli/` folder.
+### 1. Metadata 
+#### `iqs_ground_truth.csv`
+Fragment-level aggregated scores. These are the benchmark targets used for metric correlation analysis.
+
+- `Content_ID`: Base avatar/action ID (E1–E10).
+- `Distortion_ID`: Applied distortion type.
+- `ground_truth`: Correct intention label for the action.
+- `mean_IQS`: Average Intent Quality Score across observers.
+- `accuracy`: Proportion of correct intention recognitions.
+- `mean_confidence`: Average observer confidence.
+- `mean_MOS`: Average subjective visual quality rating.
+- `n_responses`: Number of observer responses aggregated for this fragment.
+
+#### `trial_responses.csv`
+Trial-level behavioral responses. Researchers can map identifiers directly to file paths in the `stimuli/` folder.
 
 - `Subject_ID`: Anonymized participant identifier.
-- `Content_ID`: Base avatar/action ID.
-- `Distortion_ID`: Applied distortion type.
+- `Content_ID`: Base avatar/action ID (same as above).
+- `Distortion_ID`: Applied distortion type (same as above).
 - `Q1_Response`: The forced-choice intention recognition response from the observer.
-- `Q2_Confidence`: Self-reported user confidence level (0, 25, 50, 75, 100).
+- `Q2_Confidence`: Self-reported confidence level (0, 25, 50, 75, 100).
 - `Q3_MOS`: Perceived visual quality score on a continuous 1–5 scale.
 
 ### 2. Stimuli Mapping
